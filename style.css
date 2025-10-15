@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#game-message {
+    margin: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #d9534f; /* Red for game over */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 30px); /* 8x8 grid */
+    grid-template-rows: repeat(8, 30px);
+    width: 240px; /* 8 * 30px */
+    height: 240px; /* 8 * 30px */
+    border: 2px solid #333;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #a0a0a0;
+    border: 1px solid #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    color: #333;
+}
+
+.cell.revealed {
+    background-color: #d0d0d0;
+    border-color: #bbb;
+    cursor: default;
+}
+
+.cell.mine {
+    background-color: #ff6347; /* Tomato */
+}
+
+.cell.revealed.mine {
+    background-color: #ff0000; /* Bright red for revealed mine */
+    color: white;
+}
+
+/* Colors for mine counts */
+.cell[data-mine-count="1"] { color: blue; }
+.cell[data-mine-count="2"] { color: green; }
+.cell[data-mine-count="3"] { color: red; }
+.cell[data-mine-count="4"] { color: navy; }
+.cell[data-mine-count="5"] { color: maroon; }
+.cell[data-mine-count="6"] { color: teal; }
+.cell[data-mine-count="7"] { color: black; }
+.cell[data-mine-count="8"] { color: gray; }
+
+#reset-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#reset-button:hover {
+    background-color: #0056b3;
+}
